@@ -52,11 +52,11 @@ class _NavbarState extends State<Navbar> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications_rounded),
-            label: "Community"
+            label: "Notifications"
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: "Search"
+            label: "Profile"
           ),
         ],
       ),

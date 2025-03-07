@@ -1,38 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:sarana/pages/history_reedem.dart';
+import 'package:sarana/pages/detail_materi_page.dart';
 
-class RewardPage extends StatefulWidget {
-  const RewardPage({super.key});
+class MateriPage extends StatefulWidget {
+  const MateriPage({super.key});
 
   @override
-  State<RewardPage> createState() => _RewardPageState();
+  State<MateriPage> createState() => _MateriPageState();
 }
 
-class _RewardPageState extends State<RewardPage> {
+class _MateriPageState extends State<MateriPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Reward"),
+            Text("Materi Page"),
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HistoryReedem(),
-                  ),
+                    builder: (context) => DetailMateriPage(),),
                 );
               },
               child: const Text(
-                "History",
+                "Detail Materi",
                 style: TextStyle(
                   color: Colors.blue,
                   fontSize: 18,
-                  decoration: TextDecoration.underline,
+                  decoration: TextDecoration.underline
                 ),
               ),
             )
