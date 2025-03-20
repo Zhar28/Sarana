@@ -63,6 +63,7 @@ flutter_native_splash:
   image: assets/logo/sarana_splash.png  # Path ke logo splash screen
   android: true
   ios: true
+  web: false
 
 
 # The following section is specific to Flutter packages.
