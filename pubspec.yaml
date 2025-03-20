@@ -47,6 +47,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
   flutter_launcher_icons: "^0.14.3"
+  flutter_native_splash: ^2.4.5
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -56,6 +57,13 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/logo/sarana_logo_2.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
+
+flutter_native_splash:
+  color: "#ffffff"  # Warna background
+  image: assets/logo/sarana_splash.png  # Path ke logo splash screen
+  android: true
+  ios: true
+
 
 # The following section is specific to Flutter packages.
 flutter:
