@@ -12,14 +12,32 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("ini forgot password"),
-          ],
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
+      ),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              Image.asset(
+                "logo_email.png",
+                width: 150,
+                height: 150,
+              ),
+            ],
+          ),
+          SizedBox(height: 16),
+          Text(
+            "Let's Sign In.",
+            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          ),
+        ],
       ),
     );
   }
