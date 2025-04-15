@@ -66,7 +66,7 @@ class _ForgotPasswordPageTahap2State extends State<ForgotPasswordPageTahap2> {
                     fontSize: 16, color: Colors.grey), // default style
                 children: [
                   TextSpan(
-                    text: "We Just Send Password Recovery Instruction\n",
+                    text: "We Just Send Password Recovery Instructio\n",
                   ),
                   TextSpan(
                     text: "to User ",
