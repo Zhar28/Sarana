@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sarana/Style/color.dart';
-import 'package:sarana/pages/home_page.dart';
 import 'package:sarana/pages/login_page.dart';
 import 'package:sarana/widget/navbar.dart';
 
@@ -31,7 +30,7 @@ class _RegisterPageState extends State<RegisterPage> {
           children: [
             Image(
               image: AssetImage(
-                "intro_logo.png",
+                "assets/intro_logo.png",
               ),
               width: 150,
               height: 150,
