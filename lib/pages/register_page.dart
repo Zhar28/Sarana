@@ -15,9 +15,14 @@ class _RegisterPageState extends State<RegisterPage> {
   bool _obscureText = true;
   bool _obscureText2 = true;
 
-  void _toggleVisibility() {
+  void _togglePasswordVisibility() {
     setState(() {
       _obscureText = !_obscureText;
+    });
+  }
+
+  void _toggleConfirmPasswordVisibility() {
+    setState(() {
       _obscureText2 = !_obscureText2;
     });
   }
@@ -25,7 +30,6 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Center(
         child: Column(
           children: [
@@ -107,10 +111,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         contentPadding: EdgeInsets.symmetric(vertical: 10),
                         prefixIcon: Icon(Icons.lock_outline),
                         suffixIcon: IconButton(
-                          icon: Icon(_obscureText
-                              ? Icons.remove_red_eye
-                              : Icons.visibility_off),
-                          onPressed: _toggleVisibility,
+                          icon: Icon(
+                            _obscureText
+                                ? Icons.remove_red_eye
+                                : Icons.visibility_off,
+                          ),
+                          onPressed: _togglePasswordVisibility,
                         ),
                       ),
                     ),
@@ -145,10 +151,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         contentPadding: EdgeInsets.symmetric(vertical: 10),
                         prefixIcon: Icon(Icons.lock_outline),
                         suffixIcon: IconButton(
-                          icon: Icon(_obscureText2
-                              ? Icons.remove_red_eye
-                              : Icons.visibility_off),
-                          onPressed: _toggleVisibility,
+                          icon: Icon(
+                            _obscureText2
+                                ? Icons.remove_red_eye
+                                : Icons.visibility_off,
+                          ),
+                          onPressed: _toggleConfirmPasswordVisibility,
                         ),
                       ),
                     ),

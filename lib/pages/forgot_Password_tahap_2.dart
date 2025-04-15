@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:sarana/Style/color.dart';
-import 'package:sarana/pages/forgot_Password_tahap_2.dart';
 import 'package:sarana/widget/navbar.dart';
 
-class ForgotPasswordPage extends StatefulWidget {
-  const ForgotPasswordPage({super.key});
+class ForgotPasswordPageTahap2 extends StatefulWidget {
+  const ForgotPasswordPageTahap2({super.key});
 
   @override
-  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
+  State<ForgotPasswordPageTahap2> createState() =>
+      _ForgotPasswordPageTahap2State();
 }
 
-class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
+class _ForgotPasswordPageTahap2State extends State<ForgotPasswordPageTahap2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,14 +44,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             ),
             SizedBox(height: 16),
             Text(
-              "Forgot.",
+              "Check Your",
               style: TextStyle(
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
                   color: ColorTheme.primary),
             ),
             Text(
-              "Password",
+              "Email In Inbox",
               style: TextStyle(
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
@@ -62,53 +62,27 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             ),
             RichText(
               text: TextSpan(
-                style: TextStyle(fontSize: 16, color: Colors.grey),
+                style: TextStyle(
+                    fontSize: 16, color: Colors.grey), // default style
                 children: [
-                  TextSpan(text: "Enter your Email below to receive\n"),
-                  TextSpan(text: "your password reset instruction"),
+                  TextSpan(
+                    text: "We Just Send Password Recovery Instruction\n",
+                  ),
+                  TextSpan(
+                    text: "to User ",
+                  ),
+                  TextSpan(
+                    text: "UserClientOf@Sarana.com",
+                    style: TextStyle(
+                        color: ColorTheme.primary,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
                 ],
               ),
             ),
             SizedBox(
               height: 48,
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    " Email Address",
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 5),
-                  TextField(
-                    textAlign: TextAlign.left,
-                    decoration: InputDecoration(
-                      hintText: 'Email',
-                      filled: true,
-                      fillColor: Colors.grey[300],
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide.none,
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide.none,
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide.none,
-                      ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 10),
-                      prefixIcon: Icon(Icons.email_outlined),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 25,
             ),
             SizedBox(
               width: double.infinity,
@@ -123,8 +97,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const ForgotPasswordPageTahap2()),
+                    MaterialPageRoute(builder: (context) => const Navbar()),
                   );
                 },
                 child: Row(
@@ -140,6 +113,15 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     ),
                   ],
                 ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Center(
+              child: Text(
+                "Resend Verification (30s)",
+                style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
             ),
           ],
