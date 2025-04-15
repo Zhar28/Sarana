@@ -30,7 +30,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 width: 150,
                 height: 150,
               ),
-<<<<<<< HEAD
             ],
           ),
           SizedBox(height: 16),
@@ -39,7 +38,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
           ),
         ],
-=======
             ),
             SizedBox(
               height: 48,
@@ -116,7 +114,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             ),
           ],
         ),
->>>>>>> 0df7d4142b45477b033f6880256c914621343674
       ),
     );
   }
