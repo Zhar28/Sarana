@@ -26,7 +26,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           Row(
             children: [
               Image.asset(
-                "assets/logo_email.png",
+                "logo_email.png",
                 width: 150,
                 height: 150,
               ),
