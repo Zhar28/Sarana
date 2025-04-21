@@ -30,7 +30,9 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
+        child: SingleChildScrollView(
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image(
               image: AssetImage(
@@ -241,10 +243,12 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ],
+                  
                 ),
               ),
             ),
           ],
+          ),
         ),
       ),
     );
