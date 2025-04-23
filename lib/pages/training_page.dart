@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarana/pages/training_page_2.dart';
 
 class TrainingPage extends StatefulWidget {
   const TrainingPage({super.key});
@@ -34,7 +35,6 @@ class _TrainingPageState extends State<TrainingPage> {
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              color: Colors.grey.shade300,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -69,7 +69,7 @@ class _TrainingPageState extends State<TrainingPage> {
                 mainAxisSpacing: 16,
                 childAspectRatio: 3 / 4,
               ),
-              itemCount: 8, // Ganti sesuai data
+              itemCount: 8, 
               itemBuilder: (context, index) {
                 return _buildCourseCard();
               },
@@ -81,64 +81,70 @@ class _TrainingPageState extends State<TrainingPage> {
   }
 
   Widget _buildCourseCard() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade300,
-            blurRadius: 6,
-            offset: Offset(2, 2),
-          )
-        ],
-      ),
-      padding: const EdgeInsets.all(12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            "logo_email.png",
-            width: double.infinity,
-            height: 60,
-            fit: BoxFit.contain,
-          ),
-          const SizedBox(height: 8),
-          const Text(
-            "Lorem Ipsum Dolor Sit Amet Porque",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '11 Bab',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                  color: Colors.grey[700],
+    return GestureDetector(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade300,
+              blurRadius: 6,
+              offset: Offset(2, 2),
+            )
+          ],
+        ),
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              "logo_email.png",
+              width: double.infinity,
+              height: 60,
+              fit: BoxFit.contain,
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              "Lorem Ipsum Dolor Sit Amet Porque",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '11 Bab',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    color: Colors.grey[700],
+                  ),
                 ),
-              ),
-              Text(
-                "1 Hari Yang Lalu",
-                style: TextStyle(fontSize: 12, color: Colors.grey[700]),
-              )
-            ],
-          ),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              Icon(Icons.star, color: Colors.yellow[800], size: 20),
-              const SizedBox(width: 4),
-              const Text(
-                "5.0",
-                style: TextStyle(color: Colors.grey),
-              ),
-            ],
-          )
-        ],
+                Text(
+                  "1 Hari Yang Lalu",
+                  style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                )
+              ],
+            ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                Icon(Icons.star, color: Colors.yellow[800], size: 20),
+                const SizedBox(width: 4),
+                const Text(
+                  "5.0",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const TrainingPage2()));
+      },
     );
   }
 }

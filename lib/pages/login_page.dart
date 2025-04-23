@@ -3,7 +3,6 @@ import 'package:sarana/Style/color.dart';
 import 'package:sarana/pages/forgot_password_page.dart';
 import 'package:sarana/pages/register_page.dart';
 import 'package:sarana/services/auth_services.dart';
-import 'package:sarana/utils/device_info.dart';
 import 'package:sarana/widget/navbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
