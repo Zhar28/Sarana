@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarana/pages/home_page.dart';
 import 'package:sarana/pages/intro_page.dart';
 import 'package:sarana/widget/navbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';

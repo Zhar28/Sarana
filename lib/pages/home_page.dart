@@ -3,6 +3,7 @@ import 'package:sarana/pages/daily_checkin_page.dart';
 import 'package:sarana/pages/leaderboard_page.dart';
 import 'package:sarana/pages/rewards_page.dart';
 import 'package:sarana/pages/training_page.dart';
+import 'package:sarana/pages/training_page_2.dart';
 
 class HomePages extends StatefulWidget {
   const HomePages({super.key});
@@ -118,7 +119,7 @@ class _HomePagesState extends State<HomePages> {
                     crossAxisCount: 2,
                     crossAxisSpacing: 8,
                     mainAxisSpacing: 16,
-                    childAspectRatio: 3 / 4, // Rasio agar tidak terlalu tinggi
+                    childAspectRatio: 3 / 4,
                   ),
                   itemCount: 8,
                   itemBuilder: (context, index) {
@@ -156,69 +157,75 @@ class _HomePagesState extends State<HomePages> {
   }
 
   Widget _buildCourseCard() {
-    return Container(
-      width: 1500,
-      height: 200,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      margin: EdgeInsets.only(left: 8.0),
-      padding: EdgeInsets.all(8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.asset(
-            "assets/logo_email.png",
-            width: double.infinity,
-            height: 60,
-            fit: BoxFit.contain,
-          ),
-          Text(
-            "Lorem Ipsum Heritage Of Alchemy",
-            style: TextStyle(fontSize: 16),
-          ),
-          SizedBox(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      '11 Bab',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          color: Colors.grey[700]),
-                    ),
-                    Text(
-                      "1 Hari Yang Lalu",
-                      style: TextStyle(fontSize: 12, color: Colors.grey[700]),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow[800],
-                    ),
-                    Text(
-                      "5.0",
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                  ],
-                )
-              ],
+    return GestureDetector(
+      child: Container(
+        width: 1500,
+        height: 200,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        margin: EdgeInsets.only(left: 8.0),
+        padding: EdgeInsets.all(8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image.asset(
+              "logo_email.png",
+              width: double.infinity,
+              height: 60,
+              fit: BoxFit.contain,
             ),
-          )
-        ],
+            Text(
+              "Lorem Ipsum Heritage Of Alchemy",
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        '11 Bab',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            color: Colors.grey[700]),
+                      ),
+                      Text(
+                        "1 Hari Yang Lalu",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow[800],
+                      ),
+                      Text(
+                        "5.0",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const TrainingPage2()));
+      },
     );
   }
 }
