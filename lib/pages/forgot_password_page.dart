@@ -10,45 +10,45 @@ class ForgotPasswordPage extends StatefulWidget {
 }
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
+  final TextEditingController emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Image.asset(
-                  "logo_email.png",
-                  width: 150,
-                  height: 150,
-                ),
-              ],
+            Center(
+              child: Image.asset(
+                "assets/logo_email.png",
+                width: 150,
+                height: 150,
+              ),
             ),
             const SizedBox(height: 16),
             const Text(
               "Let's Sign In.",
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 48),
+            const SizedBox(height: 32),
             const Text(
               "Email Address",
               style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 5),
             TextField(
-              textAlign: TextAlign.left,
+              controller: emailController,
               decoration: InputDecoration(
                 hintText: 'Email',
                 filled: true,
@@ -57,17 +57,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide.none,
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide.none,
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide.none,
-                ),
                 contentPadding: const EdgeInsets.symmetric(vertical: 10),
                 prefixIcon: const Icon(Icons.email_outlined),
               ),
+              keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 25),
             SizedBox(
@@ -84,7 +77,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ForgotPasswordPageTahap2(),
+                      builder: (context) =>
+                          const ForgotPasswordPageTahap2(),
                     ),
                   );
                 },
