@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 
 class AuthService {
-  final String baseUrl = 'https://9cad-180-248-19-16.ngrok-free.app';
+  final String baseUrl = 'https://d390-180-248-43-183.ngrok-free.app';
 
   Future<Map<String, dynamic>> login({
     required String username,

@@ -3,7 +3,6 @@ import 'package:sarana/Style/color.dart';
 import 'package:sarana/pages/forgot_password_page.dart';
 import 'package:sarana/pages/register_page.dart';
 import 'package:sarana/services/auth_services.dart';
-import 'package:sarana/utils/device_info.dart';
 import 'package:sarana/widget/navbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -20,6 +19,11 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
   final _authService = AuthService();
   bool _isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   void _toggleVisibility() {
     setState(() {
@@ -44,20 +48,27 @@ class _LoginPageState extends State<LoginPage> {
         password: password,
       );
 
+      print("📥 Login response: $result");
+
       if (result['fulfilled'] == 1) {
-        // Simpan token jika tersedia
         final prefs = await SharedPreferences.getInstance();
-        if (result.containsKey('token')) {
-          await prefs.setString('token', result['token']);
+        final token = result['data']?['token'];
+
+        if (token != null) {
+          await prefs.setString('token', token);
+          print("✅ Token berhasil disimpan: $token");
+        } else {
+          print("⚠️ Token tidak ditemukan dalam 'data'.");
         }
 
-        // Navigasi ke halaman utama
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const Navbar()),
         );
       } else {
-        _showError("Login gagal: ${result['messages'] ?? 'Periksa kembali data Anda.'}");
+        print("❌ Login gagal: fulfilled != 1. Pesan: ${result['messages']}");
+        _showError(
+            "Login gagal: ${result['messages'] ?? 'Periksa kembali data Anda.'}");
       }
     } catch (e) {
       _showError("Terjadi kesalahan: ${e.toString()}");
@@ -92,7 +103,6 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      // Email Field
                       const Align(
                         alignment: Alignment.centerLeft,
                         child: Text("Email Address",
@@ -115,8 +125,6 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       const SizedBox(height: 25),
-
-                      // Password Field
                       const Align(
                         alignment: Alignment.centerLeft,
                         child: Text("Password",
@@ -145,7 +153,6 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       const SizedBox(height: 25),
-
                       SizedBox(
                         width: double.infinity,
                         height: 50,
@@ -159,16 +166,13 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: _isLoading ? null : _handleLogin,
                           child: _isLoading
                               ? const CircularProgressIndicator(
-                                  color: Colors.white,
-                                )
+                                  color: Colors.white)
                               : const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      "Sign In",
-                                      style: TextStyle(
-                                          fontSize: 16, color: Colors.white),
-                                    ),
+                                    Text("Sign In",
+                                        style: TextStyle(
+                                            fontSize: 16, color: Colors.white)),
                                     SizedBox(width: 5),
                                     Icon(Icons.arrow_forward,
                                         color: Colors.white)

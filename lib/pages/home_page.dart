@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sarana/Style/color.dart';
 import 'package:sarana/pages/daily_checkin_page.dart';
 import 'package:sarana/pages/leaderboard_page.dart';
-import 'package:sarana/pages/reward_page.dart';
+import 'package:sarana/pages/rewards_page.dart';
 import 'package:sarana/pages/training_page.dart';
 
 class HomePages extends StatefulWidget {
@@ -16,44 +15,6 @@ class _HomePagesState extends State<HomePages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-      body: Center(
-        child: Column(
-          children: [
-            Text("Homepages"),
-            GestureDetector(
-              onTap: () {
-                // Navigasi ke halaman berikutnya
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const TrainingPage()),
-                );
-              },
-              child: const Text(
-                "Training",
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 18,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const RewardPage()),
-                );
-              },
-              child: const Text(
-                "Reward",
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 18,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-=======
         body: Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -79,7 +40,7 @@ class _HomePagesState extends State<HomePages> {
                   children: [
                     CircleAvatar(
                       radius: 27,
-                      backgroundImage: AssetImage('google_24.png'),
+                      backgroundImage: AssetImage('assets/google_24.png'),
                     ),
                     const SizedBox(width: 12),
                     const Text(
@@ -104,7 +65,7 @@ class _HomePagesState extends State<HomePages> {
                     ],
                   ),
                   child: Center(
-                    child: Image.asset("banner.png"),
+                    child: Image.asset("assets/banner.png"),
                   ),
                 ),
 
@@ -123,7 +84,7 @@ class _HomePagesState extends State<HomePages> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RewardPage()));
+                              builder: (context) => const RewardsScreen()));
                     }),
                     _buildMenuItem(Icons.emoji_events, 'Leaderboard', () {
                       Navigator.push(
@@ -184,48 +145,10 @@ class _HomePagesState extends State<HomePages> {
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
               boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)],
->>>>>>> 402a7e69d9e8fdc1e4a9473731d6d41bd3203681
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LeaderboardPage(),
-                  ),
-                );
-              },
-              child: const Text(
-                "Leaderboard",
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 18,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const DailyCheckinPage(),
-                  ),
-                );
-              },
-              child: const Text(
-                "DailyCheckin",
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 18,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-            ),
-          ],
+            child: Icon(icon, color: Colors.blue),
+          ),
         ),
-<<<<<<< HEAD
-=======
         const SizedBox(height: 8),
         Text(label, style: const TextStyle(fontSize: 14)),
       ],
@@ -247,7 +170,7 @@ class _HomePagesState extends State<HomePages> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset(
-            "logo_email.png",
+            "assets/logo_email.png",
             width: double.infinity,
             height: 60,
             fit: BoxFit.contain,
@@ -295,7 +218,6 @@ class _HomePagesState extends State<HomePages> {
             ),
           )
         ],
->>>>>>> 402a7e69d9e8fdc1e4a9473731d6d41bd3203681
       ),
     );
   }

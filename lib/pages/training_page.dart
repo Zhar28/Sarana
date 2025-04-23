@@ -98,7 +98,7 @@ class _TrainingPageState extends State<TrainingPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(
-            "logo_email.png",
+            "assets/logo_email.png",
             width: double.infinity,
             height: 60,
             fit: BoxFit.contain,
