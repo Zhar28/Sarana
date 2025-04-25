@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sarana/pages/daily_checkin_page.dart';
 import 'package:sarana/pages/leaderboard_page.dart';
-import 'package:sarana/pages/reward_page.dart';
+import 'package:sarana/pages/rewards_page.dart';
 import 'package:sarana/pages/training_page.dart';
 import 'package:sarana/pages/training_page_2.dart';
 
@@ -41,7 +41,7 @@ class _HomePagesState extends State<HomePages> {
                   children: [
                     CircleAvatar(
                       radius: 27,
-                      backgroundImage: AssetImage('google_24.png'),
+                      backgroundImage: AssetImage('assets/google_24.png'),
                     ),
                     const SizedBox(width: 12),
                     const Text(
@@ -66,7 +66,7 @@ class _HomePagesState extends State<HomePages> {
                     ],
                   ),
                   child: Center(
-                    child: Image.asset("banner.png"),
+                    child: Image.asset("assets/banner.png"),
                   ),
                 ),
 
@@ -85,7 +85,7 @@ class _HomePagesState extends State<HomePages> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RewardPage()));
+                              builder: (context) => const RewardsScreen()));
                     }),
                     _buildMenuItem(Icons.emoji_events, 'Leaderboard', () {
                       Navigator.push(
@@ -172,7 +172,7 @@ class _HomePagesState extends State<HomePages> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image.asset(
-              "logo_email.png",
+              "assets/logo_email.png",
               width: double.infinity,
               height: 60,
               fit: BoxFit.contain,

@@ -79,9 +79,11 @@ class _PreviewMateriState extends State<PreviewMateri> {
                 child: Container(
                   height: 550,
                   width: double.infinity,
-                  child: SfPdfViewer.network(
-                    'https://smpn1mejayan.sch.id/wp-content/uploads/2021/11/MASA-ORDE-BARU.pdf',
-                    key: _pdfViewerKey,
+                  child: Expanded(
+                    child: SfPdfViewer.network(
+                      'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+                      key: _pdfViewerKey,
+                    ),
                   ),
                 ),
               ),
@@ -92,7 +94,7 @@ class _PreviewMateriState extends State<PreviewMateri> {
                   style: TextStyle(
                       fontSize: 32,
                       color: Colors.black,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold), 
                 ),
               ),
               Padding(
