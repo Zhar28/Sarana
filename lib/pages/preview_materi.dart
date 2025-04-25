@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sarana/pages/training_page_2.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class PreviewMateri extends StatefulWidget {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sarana/pages/home_page.dart';
 
 class RewardsScreen extends StatefulWidget {
   const RewardsScreen({Key? key}) : super(key: key);

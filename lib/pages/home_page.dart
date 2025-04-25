@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sarana/pages/daily_checkin_page.dart';
 import 'package:sarana/pages/leaderboard_page.dart';
@@ -13,6 +14,12 @@ class HomePages extends StatefulWidget {
 }
 
 class _HomePagesState extends State<HomePages> {
+  final List<String> bannerImages = [
+    'assets/banner.png',
+    'assets/banner.png',
+    'assets/banner.png'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +40,7 @@ class _HomePagesState extends State<HomePages> {
       child: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 8, right: 8, top: 50),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -54,20 +61,35 @@ class _HomePagesState extends State<HomePages> {
                 const SizedBox(height: 20),
 
                 // Logo SARANA
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  width: double.infinity,
-                  height: 155,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(color: Colors.black12, blurRadius: 5),
-                    ],
-                  ),
-                  child: Center(
-                    child: Image.asset("assets/banner.png"),
-                  ),
+                CarouselSlider(
+                  options: CarouselOptions(
+                      height: 155,
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                      viewportFraction: 1),
+                  items: bannerImages.map((imagePath) {
+                    return Builder(
+                      builder: (BuildContext context) {
+                        return Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: [
+                              BoxShadow(color: Colors.black12, blurRadius: 5),
+                            ],
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(16),
+                            child: Image.asset(
+                              imagePath,
+                              width: double.infinity,
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  }).toList(),
                 ),
 
                 const SizedBox(height: 20),
@@ -106,7 +128,7 @@ class _HomePagesState extends State<HomePages> {
 
                 const Text(
                   'Recommendation',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
                 ),
                 const SizedBox(height: 12),
 
@@ -172,7 +194,7 @@ class _HomePagesState extends State<HomePages> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image.asset(
-              "logo_email.png",
+              "assets/logo_email.png",
               width: double.infinity,
               height: 60,
               fit: BoxFit.contain,
@@ -183,10 +205,10 @@ class _HomePagesState extends State<HomePages> {
             ),
             SizedBox(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         '11 Bab',

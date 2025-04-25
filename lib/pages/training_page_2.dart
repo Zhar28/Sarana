@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sarana/Style/color.dart';
 import 'package:sarana/pages/preview_materi.dart';
-import 'package:sarana/pages/training_page.dart';
 
 class TrainingPage2 extends StatefulWidget {
   const TrainingPage2({super.key});
@@ -39,7 +38,7 @@ class Materi {
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non neque a elit pretium molestie vitae id justo. Aliquam porta risus quis nunc commodo maximus. Mauris eu diam vel lorem dictum maximus ut et quam. Ut ut metus posuere, pretium libero quis, congue purus. Aenean in nisl tincidunt, malesuada enim et, pulvinar felis. Fusce fermentum augue non fringilla ullamcorper. Integer cursus augue nibh, non condimentum dolor luctus non. Cras ex sem, gravida ut consequat quis, aliquet gravida velit. Ut eu cursus odio.Suspendisse id nulla et massa tristique sodales eu a velit. Maecenas quam dui, pellentesque sit amet consectetur eget, convallis et tortor. Vivamus est justo, rutrum ut malesuada quis, commodo eget risus. Maecenas varius varius orci eu ullamcorper. Sed nec blandit lorem, non tincidunt felis. Donec ultrices, orci ut lacinia auctor, leo magna vestibulum metus, eget porttitor mi massa rutrum lectus. Nullam egestas vulputate ante eu vulputate. Nunc sollicitudin eu massa eget elementum. Maecenas turpis metus, elementum vel accumsan sit amet, viverra hendrerit nisl.Quisque non dignissim lacus, elementum ultrices purus. Quisque condimentum nulla in hendrerit facilisis. Phasellus eget pulvinar diam, in iaculis felis. Sed non lobortis felis. Integer consectetur ullamcorper metus, pellentesque porttitor arcu dapibus in. Nunc vestibulum sapien ipsum, in congue erat pretium vel. Sed nec tempor risus. Cras a eros consequat, blandit tortor sed, venenatis nisi. Praesent nisl ligula, consectetur nec feugiat ac, mattis vitae eros. Phasellus laoreet arcu in felis eleifend maximus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer sit amet felis ut turpis maximus commodo. Mauris nec tincidunt turpis. Donec at nisl eget tellus efficitur dapibus sit amet et nulla. Maecenas sit amet fermentum tellus, porta pretium felis.",
       rating: "4.7",
-      imagePath: "download.jpg",
+      imagePath: "assets/download.jpg",
     ),
   ];
 }
@@ -71,8 +70,8 @@ class _TrainingPage2State extends State<TrainingPage2> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 40,
-                  bottom: 20,
+                  top: 30,
+                  bottom: 10,
                 ),
                 child: Row(children: [
                   Padding(

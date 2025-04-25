@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 
 class AuthService {
-  final String baseUrl = 'https://d390-180-248-43-183.ngrok-free.app';
+  final String baseUrl = 'https://61e9-149-113-18-150.ngrok-free.app';
 
   Future<Map<String, dynamic>> login({
     required String username,
@@ -16,7 +16,6 @@ class AuthService {
 
     final headers = {
       'Authorization': basicAuth,
-      // Note: Jangan set Content-Type manual untuk MultipartRequest
     };
 
     final request = http.MultipartRequest('POST', url)
@@ -60,11 +59,9 @@ class AuthService {
   }) async {
     try {
       final response = await http.post(
-        Uri.parse('$baseUrl/register_stan'),
-        headers: {
-          'Content-Type': 'application/json',
-          'makerID': '47',
-        },
+        Uri.parse('$baseUrl/uder'), // user/public_user
+
+        /// *Create User Services*
         body: jsonEncode({
           'name': name,
           'email': email,
@@ -73,6 +70,13 @@ class AuthService {
           'user_name': username,
           'sub_company_id': subcompanyid
         }),
+
+        /// *Publi User Services*
+        // body: jsonEncode({
+        //   'name': name,
+        //   'email': email,
+        //   'password': password,
+        // }),
       );
 
       if (response.statusCode == 200) {

@@ -23,16 +23,16 @@ class _TrainingPageState extends State<TrainingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text(
+              "Training",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
         elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 20),
-            Text(
-              "Training",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
+            
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: SingleChildScrollView(
@@ -80,64 +80,70 @@ class _TrainingPageState extends State<TrainingPage> {
     );
   }
 
+
   Widget _buildCourseCard() {
     return GestureDetector(
       child: Container(
+        width: 1500,
+        height: 200,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade300,
-              blurRadius: 6,
-              offset: Offset(2, 2),
-            )
-          ],
         ),
-        padding: const EdgeInsets.all(12),
+        margin: EdgeInsets.only(left: 8.0),
+        padding: EdgeInsets.all(8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image.asset(
-              "logo_email.png",
+              "assets/logo_email.png",
               width: double.infinity,
               height: 60,
               fit: BoxFit.contain,
             ),
-            const SizedBox(height: 8),
-            const Text(
-              "Lorem Ipsum Dolor Sit Amet Porque",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            Text(
+              "Lorem Ipsum Heritage Of Alchemy",
+              style: TextStyle(fontSize: 16),
             ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  '11 Bab',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                    color: Colors.grey[700],
+            SizedBox(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '11 Bab',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            color: Colors.grey[700]),
+                      ),
+                      Text(
+                        "1 Hari Yang Lalu",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                      )
+                    ],
                   ),
-                ),
-                Text(
-                  "1 Hari Yang Lalu",
-                  style: TextStyle(fontSize: 12, color: Colors.grey[700]),
-                )
-              ],
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow[800],
+                      ),
+                      Text(
+                        "5.0",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Icon(Icons.star, color: Colors.yellow[800], size: 20),
-                const SizedBox(width: 4),
-                const Text(
-                  "5.0",
-                  style: TextStyle(color: Colors.grey),
-                ),
-              ],
-            )
           ],
         ),
       ),
