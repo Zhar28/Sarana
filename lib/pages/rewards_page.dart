@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarana/pages/home_page.dart';
 
 class RewardsScreen extends StatefulWidget {
   const RewardsScreen({Key? key}) : super(key: key);
@@ -48,12 +49,13 @@ class _RewardsScreenState extends State<RewardsScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () {
-            // Handle back button press
-          },
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+        //   onPressed: () {
+        //     Navigator.push(
+        //         context, MaterialPageRoute(builder: (context) => HomePages()));
+        //   },
+        // ),
         title: const Text(
           'Rewards',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),

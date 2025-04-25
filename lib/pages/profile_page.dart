@@ -5,6 +5,7 @@ import 'package:sarana/pages/login_page.dart';
 import 'package:sarana/pages/privacy_policy.dart';
 import 'package:sarana/pages/setting_page.dart';
 import 'package:sarana/pages/terms_condition_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -43,7 +44,8 @@ class _ProfilePageState extends State<ProfilePage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const EditProfilePage()),
+                  MaterialPageRoute(
+                      builder: (context) => const EditProfilePage()),
                 );
               },
               child: const Text(
@@ -74,18 +76,19 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.push(
+              onTap: () async {
+                final prefs = await SharedPreferences.getInstance();
+                await prefs.remove('token'); // Hapus token
+                Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginPage(),
-                  ),
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                  (route) => false,
                 );
               },
               child: const Text(
                 "Logout",
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.red,
                   fontSize: 18,
                   decoration: TextDecoration.underline,
                 ),
