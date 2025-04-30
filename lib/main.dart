@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sarana/pages/home_page.dart';
 import 'package:sarana/pages/splashscreen_pages.dart';
+import 'package:sarana/widget/navbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,8 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: Navbar(),
     );
   }
 }
-

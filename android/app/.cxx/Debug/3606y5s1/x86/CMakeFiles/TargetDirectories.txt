@@ -1,0 +1,2 @@
+D:/Flutter/Mejakita/Sarana/Sarana/android/app/.cxx/Debug/3606y5s1/x86/CMakeFiles/edit_cache.dir
+D:/Flutter/Mejakita/Sarana/Sarana/android/app/.cxx/Debug/3606y5s1/x86/CMakeFiles/rebuild_cache.dir

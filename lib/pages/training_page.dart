@@ -14,25 +14,118 @@ class _TrainingPageState extends State<TrainingPage> {
     'Aprentice',
     'Employee',
     'Senior',
-    'Administrator'
+    'Administrator',
   ];
 
   String selectedCategory = 'Umum';
+
+  final List<Course> courses = [
+    Course(
+      title: "Mini AI Engineering for Business",
+      imageUrl: "assets/training.png",
+      chapters: "11 Bab",
+      lastUpdated: "1 Hari Yang Lalu",
+      rating: 5.0,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training2.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training1.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training3.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training1.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training3.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training2.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training4.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training4.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training2.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training3.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training1.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-              "Training",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
+          "Training",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
         elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: SingleChildScrollView(
@@ -55,7 +148,6 @@ class _TrainingPageState extends State<TrainingPage> {
                 ),
               ),
             ),
-
             const SizedBox(height: 20),
 
             // Grid Card Materi
@@ -69,9 +161,9 @@ class _TrainingPageState extends State<TrainingPage> {
                 mainAxisSpacing: 16,
                 childAspectRatio: 3 / 4,
               ),
-              itemCount: 8, 
+              itemCount: courses.length,
               itemBuilder: (context, index) {
-                return _buildCourseCard();
+                return _buildCourseCard(courses[index]);
               },
             ),
           ],
@@ -80,14 +172,12 @@ class _TrainingPageState extends State<TrainingPage> {
     );
   }
 
-
-  Widget _buildCourseCard() {
+  Widget _buildCourseCard(Course course) {
     return GestureDetector(
       child: Container(
         width: 1500,
         height: 200,
         decoration: BoxDecoration(
-          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
         margin: EdgeInsets.only(left: 8.0),
@@ -97,14 +187,12 @@ class _TrainingPageState extends State<TrainingPage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image.asset(
-              "assets/logo_email.png",
-              width: double.infinity,
-              height: 60,
-              fit: BoxFit.contain,
+              course.imageUrl,
+              fit: BoxFit.fill,
             ),
             Text(
-              "Lorem Ipsum Heritage Of Alchemy",
-              style: TextStyle(fontSize: 16),
+              course.title,
+              style: TextStyle(fontSize: 16, fontFamily: 'Montserrat'),
             ),
             SizedBox(
               child: Column(
@@ -114,20 +202,17 @@ class _TrainingPageState extends State<TrainingPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '11 Bab',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Colors.grey[700]),
+                        course.chapters,
+                        style: TextStyle(fontSize: 14, color: Colors.grey[700]),
                       ),
                       Text(
-                        "1 Hari Yang Lalu",
+                        course.lastUpdated,
                         style: TextStyle(fontSize: 12, color: Colors.grey[700]),
-                      )
+                      ),
                     ],
                   ),
                   const SizedBox(
-                    width: 10,
+                    height: 5,
                   ),
                   Row(
                     children: [
@@ -136,11 +221,11 @@ class _TrainingPageState extends State<TrainingPage> {
                         color: Colors.yellow[800],
                       ),
                       Text(
-                        "5.0",
+                        course.rating.toString(),
                         style: TextStyle(color: Colors.grey),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -148,8 +233,10 @@ class _TrainingPageState extends State<TrainingPage> {
         ),
       ),
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const TrainingPage2()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const TrainingPage2()),
+        );
       },
     );
   }
@@ -169,15 +256,16 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(22),
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+        height: 30,
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 18),
         decoration: BoxDecoration(
-          color: isSelected ? Colors.blueAccent : Colors.white,
-          borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(22),
           border: Border.all(
-            color: isSelected ? Colors.blueAccent : Colors.grey.shade400,
+            color: isSelected ? Colors.blue : Colors.grey.shade400,
             width: 1,
           ),
           boxShadow: [
@@ -192,11 +280,27 @@ class CategoryItem extends StatelessWidget {
           label,
           style: TextStyle(
             fontSize: 14,
-            color: isSelected ? Colors.white : Colors.black87,
+            color: Colors.black87,
             fontWeight: FontWeight.w500,
           ),
         ),
       ),
     );
   }
+}
+
+class Course {
+  final String title;
+  final String imageUrl;
+  final String chapters;
+  final String lastUpdated;
+  final double rating;
+
+  Course({
+    required this.title,
+    required this.imageUrl,
+    required this.chapters,
+    required this.lastUpdated,
+    required this.rating,
+  });
 }
