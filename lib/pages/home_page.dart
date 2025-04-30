@@ -23,20 +23,8 @@ class _HomePagesState extends State<HomePages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFEEFBFF),
         body: Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF34C1F0),
-              Color(0xFFEEFBFF),
-            ],
-            stops: [
-              0.0,
-              0.3
-            ]),
-      ),
       child: SafeArea(
         child: SingleChildScrollView(
           child: Padding(

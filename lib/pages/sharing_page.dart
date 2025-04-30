@@ -167,6 +167,7 @@ class _SharingPageState extends State<SharingPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Community"),
+        backgroundColor: Colors.white,
       ),
       body: Column(
         children: [
