@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 
 class AuthService {
-  final String baseUrl = 'https://61e9-149-113-18-150.ngrok-free.app';
+  final String baseUrl = 'https://ca00-180-248-30-250.ngrok-free.app';
 
   Future<Map<String, dynamic>> login({
     required String username,
@@ -44,7 +44,7 @@ class AuthService {
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     } else {
-      throw Exception('Login gagal: ${response.statusCode} - ${response.body}');
+      throw Exception('Login gagal: email atau password salah');
     }
   }
 

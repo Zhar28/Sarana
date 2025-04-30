@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
       } else {
         print("❌ Login gagal: fulfilled != 1. Pesan: ${result['messages']}");
         _showError(
-            "Login gagal: ${result['messages'] ?? 'Periksa kembali data Anda.'}");
+            "Login gagal: Periksa kembali data Anda.");
       }
     } catch (e) {
       _showError("Terjadi kesalahan: ${e.toString()}");
