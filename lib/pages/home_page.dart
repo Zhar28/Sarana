@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sarana/pages/daily_checkin_page.dart';
 import 'package:sarana/pages/leaderboard_page.dart';
@@ -16,15 +15,86 @@ class HomePages extends StatefulWidget {
 class _HomePagesState extends State<HomePages> {
   final List<String> bannerImages = [
     'assets/banner.png',
-    'assets/banner.png',
-    'assets/banner.png'
+  ];
+
+  final List<Course> courses = [
+    Course(
+      title: "Mini AI Engineering for Business",
+      imageUrl: "assets/training1.png",
+      chapters: "11 Bab",
+      lastUpdated: "1 Hari Yang Lalu",
+      rating: 5.0,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training2.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training1.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training4.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training1.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training3.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training1.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training4.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
+    Course(
+      title: "Flutter for Beginners",
+      imageUrl: "assets/training3.png",
+      chapters: "8 Bab",
+      lastUpdated: "2 Hari Yang Lalu",
+      rating: 4.8,
+    ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEEFBFF),
         body: Container(
+      color: const Color(0xFFEEFBFF),
       child: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -36,26 +106,43 @@ class _HomePagesState extends State<HomePages> {
                   children: [
                     CircleAvatar(
                       radius: 27,
-                      backgroundImage: AssetImage('assets/google_24.png'),
+                      backgroundImage: AssetImage(
+                        'assets/chesa.png',
+                      ),
                     ),
                     const SizedBox(width: 12),
-                    const Text(
-                      'Hi, Chesa 👋',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    RichText(
+                      text: TextSpan(
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
+                        ),
+                        children: const [
+                          TextSpan(
+                            text: 'Hi, ',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          TextSpan(
+                            text: 'Chesa',
+                            style: TextStyle(
+                              color: Color(0xFF34C1F0),
+                            ),
+                          ),
+                          TextSpan(
+                            text: ' 👋',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 20),
 
                 // Logo SARANA
-                CarouselSlider(
-                  options: CarouselOptions(
-                      height: 155,
-                      autoPlay: true,
-                      enlargeCenterPage: true,
-                      viewportFraction: 1),
-                  items: bannerImages.map((imagePath) {
+                Column(
+                  children: bannerImages.map((imagePath) {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
@@ -64,14 +151,20 @@ class _HomePagesState extends State<HomePages> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: [
-                              BoxShadow(color: Colors.black12, blurRadius: 5),
+                              BoxShadow(
+                                color: Colors.black26,
+                                offset: Offset(0, 8),
+                                blurRadius: 10,
+                                spreadRadius: -4,
+                              ),
                             ],
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(16),
                             child: Image.asset(
                               imagePath,
-                              width: double.infinity,
+                              width: 350,
+                              height: 155,
                             ),
                           ),
                         );
@@ -85,30 +178,74 @@ class _HomePagesState extends State<HomePages> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _buildMenuItem(Icons.school, 'Training', () {
-                      Navigator.push(
+                    _buildMenuItem(
+                      Padding(
+                        padding: const EdgeInsets.all(14.0),
+                        child: Image.asset(
+                          'assets/buku.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      'Training',
+                      () {
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const TrainingPage()));
-                    }),
-                    _buildMenuItem(Icons.card_giftcard, 'Rewards', () {
-                      Navigator.push(
+                              builder: (context) => const TrainingPage()),
+                        );
+                      },
+                    ),
+                    _buildMenuItem(
+                      Padding(
+                        padding: const EdgeInsets.all(14.0),
+                        child: Image.asset(
+                          'assets/gift.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      'Rewards',
+                      () {
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RewardsScreen()));
-                    }),
-                    _buildMenuItem(Icons.emoji_events, 'Leaderboard', () {
-                      Navigator.push(
+                              builder: (context) => const RewardsScreen()),
+                        );
+                      },
+                    ),
+                    _buildMenuItem(
+                      Padding(
+                        padding: const EdgeInsets.all(14.0),
+                        child: Image.asset(
+                          'assets/trophy.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      'Leaderboard',
+                      () {
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const LeaderboardPage()));
-                    }),
-                    _buildMenuItem(Icons.check_circle, 'Check-in', () {
-                      Navigator.push(
+                              builder: (context) => const LeaderboardPage()),
+                        );
+                      },
+                    ),
+                    _buildMenuItem(
+                      Padding(
+                        padding: const EdgeInsets.all(14.0),
+                        child: Image.asset(
+                          'assets/coin.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      'Check-in',
+                      () {
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const DailyCheckinPage()));
-                    }),
+                              builder: (context) => const DailyCheckinPage()),
+                        );
+                      },
+                    ),
                   ],
                 ),
 
@@ -116,7 +253,10 @@ class _HomePagesState extends State<HomePages> {
 
                 const Text(
                   'Recommendation',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Montserrat'),
                 ),
                 const SizedBox(height: 12),
 
@@ -124,16 +264,17 @@ class _HomePagesState extends State<HomePages> {
                 GridView.builder(
                   shrinkWrap: true,
                   physics:
-                      NeverScrollableScrollPhysics(), // Biar gak konflik scroll-nya
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      const NeverScrollableScrollPhysics(), // Prevent scroll conflict
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 8,
                     mainAxisSpacing: 16,
                     childAspectRatio: 3 / 4,
                   ),
-                  itemCount: 8,
+                  itemCount: courses
+                      .length, // Use courses.length instead of hardcoding
                   itemBuilder: (context, index) {
-                    return _buildCourseCard();
+                    return _buildCourseCard(courses[index]);
                   },
                 ),
               ],
@@ -144,7 +285,7 @@ class _HomePagesState extends State<HomePages> {
     ));
   }
 
-  Widget _buildMenuItem(IconData icon, String label, VoidCallback onTap) {
+  Widget _buildMenuItem(Widget icon, String label, VoidCallback onTap) {
     return Column(
       children: [
         GestureDetector(
@@ -157,7 +298,7 @@ class _HomePagesState extends State<HomePages> {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)],
             ),
-            child: Icon(icon, color: Colors.blue),
+            child: icon,
           ),
         ),
         const SizedBox(height: 8),
@@ -166,30 +307,27 @@ class _HomePagesState extends State<HomePages> {
     );
   }
 
-  Widget _buildCourseCard() {
+  Widget _buildCourseCard(Course course) {
     return GestureDetector(
       child: Container(
         width: 1500,
         height: 200,
         decoration: BoxDecoration(
-          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
-        margin: EdgeInsets.only(left: 8.0),
-        padding: EdgeInsets.all(8),
+        margin: const EdgeInsets.only(left: 8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image.asset(
-              "assets/logo_email.png",
-              width: double.infinity,
-              height: 60,
-              fit: BoxFit.contain,
+              course.imageUrl,
+              fit: BoxFit.fill,
             ),
             Text(
-              "Lorem Ipsum Heritage Of Alchemy",
-              style: TextStyle(fontSize: 16),
+              course.title,
+              style: TextStyle(fontSize: 16, fontFamily: 'Montserrat'),
             ),
             SizedBox(
               child: Column(
@@ -199,33 +337,31 @@ class _HomePagesState extends State<HomePages> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '11 Bab',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Colors.grey[700]),
+                        course.chapters,
+                        style: TextStyle(fontSize: 14, color: Colors.grey[700]),
                       ),
                       Text(
-                        "1 Hari Yang Lalu",
+                        course.lastUpdated,
                         style: TextStyle(fontSize: 12, color: Colors.grey[700]),
-                      )
+                      ),
                     ],
                   ),
                   const SizedBox(
-                    width: 10,
+                    height: 5,
                   ),
                   Row(
                     children: [
                       Icon(
                         Icons.star,
-                        color: Colors.yellow[800],
+                        color: Color(0xFFFBC922),
                       ),
                       Text(
-                        "5.0",
-                        style: TextStyle(color: Colors.grey),
+                        course.rating.toString(),
+                        style: TextStyle(
+                            color: Color(0xFFFBC922), fontFamily: 'Montserrat'),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -233,9 +369,27 @@ class _HomePagesState extends State<HomePages> {
         ),
       ),
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const TrainingPage2()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const TrainingPage2()),
+        );
       },
     );
   }
+}
+
+class Course {
+  final String title;
+  final String imageUrl;
+  final String chapters;
+  final String lastUpdated;
+  final double rating;
+
+  Course({
+    required this.title,
+    required this.imageUrl,
+    required this.chapters,
+    required this.lastUpdated,
+    required this.rating,
+  });
 }

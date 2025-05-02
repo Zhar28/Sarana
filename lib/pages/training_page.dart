@@ -10,14 +10,14 @@ class TrainingPage extends StatefulWidget {
 
 class _TrainingPageState extends State<TrainingPage> {
   final List<String> categories = [
-    'Umum',
-    'Aprentice',
-    'Employee',
-    'Senior',
-    'Administrator',
+    'All',
+    'UI/UX Design',
+    'AI',
+    'Front End',
+    'Back End',
   ];
 
-  String selectedCategory = 'Umum';
+  String selectedCategory = 'All';
 
   final List<Course> courses = [
     Course(
@@ -122,11 +122,14 @@ class _TrainingPageState extends State<TrainingPage> {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         elevation: 0,
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
+              color: const Color(0xFFEEFBFF),
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -218,11 +221,12 @@ class _TrainingPageState extends State<TrainingPage> {
                     children: [
                       Icon(
                         Icons.star,
-                        color: Colors.yellow[800],
+                        color: Color(0xFFFBC922),
                       ),
                       Text(
                         course.rating.toString(),
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(
+                            color: Color(0xFFFBC922), fontFamily: 'Montserrat'),
                       ),
                     ],
                   ),
@@ -256,17 +260,16 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(22),
+      borderRadius: BorderRadius.circular(25),
       onTap: onTap,
       child: Container(
-        height: 30,
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 18),
+        padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 24),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(22),
+          borderRadius: BorderRadius.circular(25),
           border: Border.all(
             color: isSelected ? Colors.blue : Colors.grey.shade400,
-            width: 1,
+            width: 2,
           ),
           boxShadow: [
             BoxShadow(
