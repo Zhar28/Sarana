@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarana/pages/Homepage/redeem_page.dart';
 
 class RewardsScreen extends StatefulWidget {
   const RewardsScreen({Key? key}) : super(key: key);
@@ -42,19 +43,51 @@ class _RewardsScreenState extends State<RewardsScreen> {
     ),
   ];
 
+  void _showInsufficientPointsDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Sorry'),
+          content: const Text('You do not have enough points.'),
+          actions: [
+            TextButton(
+              child: const Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _navigateToVoucherRedeem(RewardItem reward) {
+    if (currentPoints >= reward.pointsRequired) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => VoucherRedeemScreen(reward: reward),
+        ),
+      );
+    } else {
+      _showInsufficientPointsDialog();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        // leading: IconButton(
-        //   icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-        //   onPressed: () {
-        //     Navigator.push(
-        //         context, MaterialPageRoute(builder: (context) => HomePages()));
-        //   },
-        // ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+          onPressed: () {
+            // Handle back button press
+          },
+        ),
         title: const Text(
           'Rewards',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
@@ -187,7 +220,7 @@ class _RewardsScreenState extends State<RewardsScreen> {
                 itemBuilder: (context, index) {
                   final reward = rewards[index];
                   return GestureDetector(
-                    onTap: () => {}, // Placeholder ke redeem page
+                    onTap: () => _navigateToVoucherRedeem(reward),
                     child: Container(
                       decoration: BoxDecoration(
                         color: reward.color,

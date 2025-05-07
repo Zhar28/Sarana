@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sarana/pages/home_page.dart';
+import 'package:sarana/pages/Homepage/home_page.dart';
 import 'package:sarana/pages/splashscreen_pages.dart';
 import 'package:sarana/widget/navbar.dart';
 
