@@ -308,6 +308,7 @@ class _SharingPageState extends State<SharingPage> {
             style: const TextStyle(fontSize: 14),
           ),
           const SizedBox(height: 12),
+          Divider(),
           // Footer Icons
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

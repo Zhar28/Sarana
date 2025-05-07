@@ -38,7 +38,7 @@ class Materi {
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non neque a elit pretium molestie vitae id justo. Aliquam porta risus quis nunc commodo maximus. Mauris eu diam vel lorem dictum maximus ut et quam. Ut ut metus posuere, pretium libero quis, congue purus. Aenean in nisl tincidunt, malesuada enim et, pulvinar felis. Fusce fermentum augue non fringilla ullamcorper. Integer cursus augue nibh, non condimentum dolor luctus non. Cras ex sem, gravida ut consequat quis, aliquet gravida velit. Ut eu cursus odio.Suspendisse id nulla et massa tristique sodales eu a velit. Maecenas quam dui, pellentesque sit amet consectetur eget, convallis et tortor. Vivamus est justo, rutrum ut malesuada quis, commodo eget risus. Maecenas varius varius orci eu ullamcorper. Sed nec blandit lorem, non tincidunt felis. Donec ultrices, orci ut lacinia auctor, leo magna vestibulum metus, eget porttitor mi massa rutrum lectus. Nullam egestas vulputate ante eu vulputate. Nunc sollicitudin eu massa eget elementum. Maecenas turpis metus, elementum vel accumsan sit amet, viverra hendrerit nisl.Quisque non dignissim lacus, elementum ultrices purus. Quisque condimentum nulla in hendrerit facilisis. Phasellus eget pulvinar diam, in iaculis felis. Sed non lobortis felis. Integer consectetur ullamcorper metus, pellentesque porttitor arcu dapibus in. Nunc vestibulum sapien ipsum, in congue erat pretium vel. Sed nec tempor risus. Cras a eros consequat, blandit tortor sed, venenatis nisi. Praesent nisl ligula, consectetur nec feugiat ac, mattis vitae eros. Phasellus laoreet arcu in felis eleifend maximus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer sit amet felis ut turpis maximus commodo. Mauris nec tincidunt turpis. Donec at nisl eget tellus efficitur dapibus sit amet et nulla. Maecenas sit amet fermentum tellus, porta pretium felis.",
       rating: "4.7",
-      imagePath: "assets/download.jpg",
+      imagePath: "assets/materi1.png",
     ),
   ];
 }
@@ -238,7 +238,7 @@ class _TrainingPage2State extends State<TrainingPage2> {
                                 width: 150,
                                 decoration: BoxDecoration(
                                   color: ColorTheme.primary,
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Center(
                                   child: Row(
@@ -279,11 +279,11 @@ class _TrainingPage2State extends State<TrainingPage2> {
                     padding: const EdgeInsets.only(
                         top: 20, bottom: 4, left: 20, right: 20),
                     child: Text(
-                      "Course Section",
+                      "Learning Section",
                       style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontSize: 24,
+                          fontWeight: FontWeight.w900,
+                          fontFamily: 'Montserrat'),
                     ),
                   ),
                   SingleChildScrollView(
@@ -312,8 +312,10 @@ class _TrainingPage2State extends State<TrainingPage2> {
                         const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
                     child: Text(
                       "About This Course",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 24,
+                          fontFamily: 'Montserrat'),
                     ),
                   ),
                   Padding(
