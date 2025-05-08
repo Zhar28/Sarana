@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sarana/pages/Homepage/training_page_2.dart';
+import 'package:sarana/pages/Homepage/training/training_page_2.dart';
 
 class TrainingPage extends StatefulWidget {
   const TrainingPage({super.key});
