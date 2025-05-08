@@ -165,13 +165,62 @@ class _SharingPageState extends State<SharingPage> {
         allCarts.where((cart) => cart.category == selectedFilter).toList();
 
     return Scaffold(
+      backgroundColor: Color(0xFFEEFBFF),
       appBar: AppBar(
-        title: const Text("Community"),
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFFEEFBFF),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              "Community",
+              style: TextStyle(color: Colors.black),
+            ),
+            const SizedBox(width: 12),
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.grey, width: 1)),
+              padding: const EdgeInsets.all(8),
+              child: const Icon(
+                Icons.add,
+                size: 20,
+                color: Colors.lightBlue,
+              ),
+            ),
+          ],
+        ),
+        elevation: 0,
       ),
       body: Column(
         children: [
           const SizedBox(height: 16),
+
+          // Search Bar
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Search...',
+                prefixIcon: const Icon(Icons.search),
+                filled: true,
+                fillColor: Colors.white,
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide.none,
+                ),
+              ),
+              onChanged: (query) {
+                // Optional: implement search functionality here
+              },
+            ),
+          ),
+
+          const SizedBox(height: 16),
+
+          // TabBar Filters
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(filters.length, (index) {

@@ -49,20 +49,9 @@ class _TrainingPage2State extends State<TrainingPage2> {
     final materi = Materi.detailMateri[0];
 
     return Scaffold(
+      backgroundColor: Color(0xFFEEFBFF),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFF34C1F0),
-                Color(0xFFEEFBFF),
-              ],
-              stops: [
-                0.0,
-                0.09
-              ]),
-        ),
+        decoration: const BoxDecoration(),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

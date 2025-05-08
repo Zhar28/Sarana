@@ -14,21 +14,10 @@ class _PreviewMateriState extends State<PreviewMateri> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFEEFBFF),
       body: SingleChildScrollView(
         child: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xFF34C1F0),
-                  Color(0xFFEEFBFF),
-                ],
-                stops: [
-                  0.0,
-                  0.09
-                ]),
-          ),
+          decoration: const BoxDecoration(),
           child: Column(
             children: [
               Padding(
@@ -93,7 +82,7 @@ class _PreviewMateriState extends State<PreviewMateri> {
                   style: TextStyle(
                       fontSize: 32,
                       color: Colors.black,
-                      fontWeight: FontWeight.bold), 
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(

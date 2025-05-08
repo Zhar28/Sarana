@@ -242,7 +242,7 @@ class _HomePagesState extends State<HomePages> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const DailyCheckinPage()));
+                              builder: (context) => const DailyCheckInScreen()));
                     }),
                   ],
                 ),

@@ -39,25 +39,14 @@ class _NavbarState extends State<Navbar> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_rounded),
-            label: "Home"
-          ),
+              icon: Icon(Icons.home_rounded), label: "Home"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.people_alt_rounded),
-            label: "Community"
-          ),
+              icon: Icon(Icons.people_alt_rounded), label: "Community"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search_rounded),
-            label: "Search"
-          ),
+              icon: Icon(Icons.search_rounded), label: "Search"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_rounded),
-            label: "Notifications"
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile"
-          ),
+              icon: Icon(Icons.notifications_rounded), label: "Notifications"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
         ],
       ),
     );
