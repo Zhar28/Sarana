@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-const String rewardCoinPath = 'assets/reward_coin.png';
-const String threeRewardCoinPath = 'assets/three_reward_coin.png';
+const String rewardCoinPath = 'assets/coin.png';
+const String threeRewardCoinPath = 'assets/coin.png';
 
 class DailyCheckInScreen extends StatelessWidget {
   const DailyCheckInScreen({Key? key}) : super(key: key);
@@ -240,17 +240,16 @@ class WeeklyCalendarSection extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 4),
+                    const SizedBox(height: 1),
                   ],
                 ),
-                Image.asset(threeRewardCoinPath, width: 36, height: 36),
+                Image.asset(threeRewardCoinPath, width: 30, height: 30),
               ],
             )
           else
             Column(
               children: [
-                Image.asset(rewardCoinPath, width: 24, height: 24),
-                const SizedBox(height: 4),
+                Image.asset(rewardCoinPath, width: 16, height: 16),
                 Text(
                   '$points Points',
                   style: TextStyle(

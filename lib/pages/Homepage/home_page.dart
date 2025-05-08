@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sarana/pages/Homepage/daily_checkin_page.dart';
 import 'package:sarana/pages/Homepage/leaderboard_page.dart';
 import 'package:sarana/pages/Homepage/rewards_page.dart';
-import 'package:sarana/pages/Homepage/training_page.dart';
-import 'package:sarana/pages/Homepage/training_page_2.dart';
+import 'package:sarana/pages/Homepage/training/training_page.dart';
+import 'package:sarana/pages/Homepage/training/training_page_2.dart';
 
 class HomePages extends StatefulWidget {
   const HomePages({super.key});
@@ -242,7 +242,7 @@ class _HomePagesState extends State<HomePages> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const DailyCheckinPage()));
+                              builder: (context) => const DailyCheckInScreen()));
                     }),
                   ],
                 ),
